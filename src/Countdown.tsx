@@ -314,18 +314,18 @@ export default class Countdown extends React.Component<CountdownProps, Countdown
   }
 
   render(): React.ReactNode {
-    if (this.legacyMode) {
-      const { count, children, onComplete } = this.props;
-      return (
-        <LegacyCountdown
-          ref={this.legacyCountdownRef}
-          count={count}
-          onComplete={onComplete as LegacyCountdownProps['onComplete']}
-        >
-          {children}
-        </LegacyCountdown>
-      );
-    }
+    // if (this.legacyMode) {
+    //   const { count, children, onComplete } = this.props;
+    //   return (
+    //     <LegacyCountdown
+    //       ref={this.legacyCountdownRef}
+    //       count={count}
+    //       onComplete={onComplete as LegacyCountdownProps['onComplete']}
+    //     >
+    //       {children}
+    //     </LegacyCountdown>
+    //   );
+    // }
 
     const { className, overtime, children, renderer } = this.props;
     const renderProps = this.getRenderProps();
@@ -341,6 +341,7 @@ export default class Countdown extends React.Component<CountdownProps, Countdown
     const { days, hours, minutes, seconds } = renderProps.formatted;
     return (
       <span className={className}>
+        <p>Edited by abrar azam</p>
         {renderProps.total < 0 ? '-' : ''}
         {days}
         {days ? ':' : ''}
